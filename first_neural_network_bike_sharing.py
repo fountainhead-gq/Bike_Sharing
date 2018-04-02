@@ -354,7 +354,9 @@ for ii in range(iterations):
     # Printing out the training progress
     train_loss = MSE(network.run(train_features).T, train_targets['cnt'].values)
     val_loss = MSE(network.run(val_features).T, val_targets['cnt'].values)
-    sys.stdout.write("\rProgress: {:2.1f}".format(100 * ii/float(iterations))                      + "% ... Training loss: " + str(train_loss)[:5]                      + " ... Validation loss: " + str(val_loss)[:5])
+    sys.stdout.write("\rProgress: {:2.1f}".format(100 * ii/float(iterations))                      
+                     + "% ... Training loss: " + str(train_loss)[:5]                      
+                     + " ... Validation loss: " + str(val_loss)[:5])
     sys.stdout.flush()
     
     losses['train'].append(train_loss)
